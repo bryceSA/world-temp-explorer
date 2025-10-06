@@ -3,7 +3,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import WeatherCard from "@/components/WeatherCard";
 import TemperatureChart from "@/components/TemperatureChart";
-import WeatherMap from "@/components/WeatherMap";
+// Temporarily comment out map to debug
+// import WeatherMap from "@/components/WeatherMap";
 import { cities, generateHistoricalData } from "@/lib/weatherData";
 import { MapPin, TrendingUp } from "lucide-react";
 import heroImage from "@/assets/weather-hero.jpg";
@@ -127,7 +128,7 @@ const Index = () => {
           </Card>
         </div>
 
-        {/* Interactive Map */}
+        {/* Interactive Map - Temporarily disabled */}
         <div className="mb-12">
           <Card>
             <CardHeader>
@@ -137,7 +138,10 @@ const Index = () => {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <WeatherMap
+              <div className="h-[500px] w-full rounded-lg border bg-muted/20 flex items-center justify-center">
+                <p className="text-muted-foreground">Interactive map coming soon - React-Leaflet integration in progress</p>
+              </div>
+              {/* <WeatherMap
                 cities={cities.map((c) => ({
                   city: c.city,
                   lat: c.lat,
@@ -147,7 +151,7 @@ const Index = () => {
                 }))}
                 selectedCity={selectedCity}
                 onCitySelect={setSelectedCity}
-              />
+              /> */}
             </CardContent>
           </Card>
         </div>
